@@ -1,0 +1,49 @@
+# -*- makefile -*-
+
+# Test names.
+tests/self_TESTS = $(addprefix tests/self/, \
+change-cpu \
+atomics \
+all-list \
+ipi \
+ipi-blocked \
+ipi-all \
+memory-test-large \
+memory-test-medium \
+memory-test-small \
+memory-test-user-percent \
+memory-test-multiple \
+cli-print \
+savecallerinfo \
+spinlock \
+)
+
+# Sources for tests.
+tests/self_SRC  = tests/self/tests.c
+tests/self_SRC += tests/self/change-cpu.c
+tests/self_SRC += tests/self/atomics.c
+tests/self_SRC += tests/self/spinlock.c
+tests/self_SRC += tests/self/all-list.c
+tests/self_SRC += tests/self/ipi.c
+tests/self_SRC += tests/self/ipi-missed.c
+tests/self_SRC += tests/self/cli-print.c
+tests/self_SRC += tests/self/memory-test.c
+tests/self_SRC += tests/self/memory-test-multiple.c
+tests/self_SRC += tests/self/savecallerinfo.c
+tests/self_SRC += tests/self/console.c
+tests/self_SRC += tests/self/wallclock-est.c
+
+tests/self/memory-test-large.output: SIMULATOR = --kvm
+tests/self/memory-test-large.output: PINTOSOPTS += -m 1024
+tests/self/memory-test-large.output: KERNELFLAGS += -up=95
+tests/self/memory-test-medium.output: SIMULATOR = --kvm
+tests/self/memory-test-medium.output: PINTOSOPTS += -m 64
+tests/self/memory-test-small.output: PINTOSOPTS += -m 4
+tests/self/memory-test-user-percent.output: SIMULATOR = --kvm
+tests/self/memory-test-user-percent.output: PINTOSOPTS += -m 128
+tests/self/memory-test-user-percent.output: KERNELFLAGS += -up=90
+tests/self/memory-test-multiple.output: SIMULATOR = --kvm
+tests/self/memory-test-multiple.output: PINTOSOPTS += -m 1024
+tests/self/ipi.output: SMP = 8
+tests/self/ipi-blocked.output: SMP = 8
+tests/self/ipi-all.output: SMP = 8

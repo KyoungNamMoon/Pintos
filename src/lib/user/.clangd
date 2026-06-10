@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -I.
+    - -I..
+    - -I../..
+  Remove:
+    - -nostdinc

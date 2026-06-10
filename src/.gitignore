@@ -1,0 +1,13 @@
+cscope.files
+cscope.out
+TAGS
+tags
+*.o
+*.a
+usbdisk.img
+examples/authtest
+examples/login
+examples/passwd
+examples/useradd
+examples/userdel
+examples/libc.a

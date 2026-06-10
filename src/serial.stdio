@@ -1,0 +1,54 @@
+PiLo hda2
+Loading...........................................................
+Kernel command line: run shell
+CPU 0 is up
+Pintos booting with 65,344 kB RAM...
+PCI Device 0:0.0 (8086,1237): Intel - 82441FX (PCI Host) IRQ 0
+PCI Device 0:1.0 (8086,7000): Intel - 82371SB_ISA (PCI-ISA Bridge) IRQ 0
+PCI Device 0:1.1 (8086,7010): Intel - 82371SB_IDE (Unknown Type) IRQ 0
+PCI Device 0:1.3 (8086,7113): Intel - 82371AB/EB/MB_ACPI (Unknown Type) IRQ 9
+PCI Device 0:2.0 (1234,1111): Unknown Vendor - Unknown Device (VGA Controller) IRQ 0
+PCI Device 0:3.0 (8086,100e): Intel - 82544EM Gigabit Ethernet Controller (Ethernet) IRQ 11
+MAC: Loaded 9 security profiles
+Calibrating timer...  755,712,000 loops/s.
+Initializing EHCI
+Initializing UHCI
+ide0: unexpected interrupt
+hda: 14,112 sectors (6 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 945 sectors (472 kB), Pintos OS kernel (20)
+hda2: 9,072 sectors (4 MB), Pintos file system (21)
+hda3: 4,032 sectors (1 MB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+CPU 1 is up
+CPU 2 is up
+CPU 3 is up
+Started 3 additional CPUs.
+Boot complete.
+Executing 'shell':
+================================
+   Welcome to Pintos OS Login   
+================================
+
+================================
+  First Boot: Set Root Password  
+================================
+Password must be 8+ chars with uppercase,
+lowercase, digit, and special character.
+
+New root password: 
+Confirm password:  
+Root password set successfully.
+
+login: root
+password: 
+Login successful! Welcome, root.
+Shell starting...
+root@pintos:/$ mkdir test
+mkdir: exit(0)
+root@pintos:/$ cd test
+root@pintos:/test$ cd    ls
+.:
+ls: exit(0)
+root@pintos:/test$ cd ..
+root@pintos:/$ 

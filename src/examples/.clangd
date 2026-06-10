@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -I../lib/user
+    - -I../lib
+    - -I..
+  Remove:
+    - -nostdinc
